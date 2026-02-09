@@ -66,8 +66,9 @@ The script must provide explicit console printouts using status symbols (e.g., [
 # How to Run\
 \
 **Step 1 \uc0\u8212  Install Dependencies (one-time)**\
-```pip install paramiko openpyxl```\
+```pip3 install paramiko openpyxl```\
 Installs the two required Python libraries: `paramiko` for SSH connectivity to the router, and `openpyxl` for creating and updating the Excel workbook.\
+**Note:** On macOS, use `pip3` (not `pip`). The `pip` command may not be available unless aliased.\
 \
 **Step 2 \uc0\u8212  Start the Monitor**\
 ```python3 router_monitor.py```\

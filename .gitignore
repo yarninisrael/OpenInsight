@@ -1,0 +1,4 @@
+router_report.xlsx
+__pycache__/
+*.pyc
+.claude/

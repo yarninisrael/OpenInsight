@@ -61,4 +61,20 @@ The script must provide explicit console printouts using status symbols (e.g., [
 # Technical Constraints\
 - Do not use 'top' in interactive mode; use batch mode (-bn1).\
 - Use a 60-second loop with `time.sleep()`.\
-- Ensure all logic is in 'router_monitor.py' and provide a 'requirements.txt' file.}
+- Ensure all logic is in 'router_monitor.py' and provide a 'requirements.txt' file.\
+\
+# How to Run\
+\
+**Step 1 \uc0\u8212  Install Dependencies (one-time)**\
+```pip install paramiko openpyxl```\
+Installs the two required Python libraries: `paramiko` for SSH connectivity to the router, and `openpyxl` for creating and updating the Excel workbook.\
+\
+**Step 2 \uc0\u8212  Start the Monitor**\
+```python3 router_monitor.py```\
+Launches the polling loop. The script will connect to the router via SSH every 60 seconds, harvest CPU load, process count, and top-10 process metrics, then write the data to `router_report.xlsx` and refresh the Dashboard charts. Console output confirms each stage with [+], [!], or [>] symbols.\
+\
+**Step 3 \uc0\u8212  View the Dashboard**\
+Open `router_report.xlsx` in Excel (or Numbers) at any time. The **Dashboard** sheet contains four auto-updating line charts. Close the file before the next polling cycle to avoid the "FILE LOCKED" warning.\
+\
+**Step 4 \uc0\u8212  Stop the Monitor**\
+Press `Ctrl+C` in the terminal. The script exits gracefully with a goodbye message.}
